@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>References — The Circulatory System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========== LOADING SCREEN ========== -->
+<div id="loading-screen">
+  <div class="loader-heart">
+    <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 85 C50 85 5 55 5 28 C5 14 16 5 28 5 C36 5 44 9 50 16 C56 9 64 5 72 5 C84 5 95 14 95 28 C95 55 50 85 50 85Z"
+        fill="#8b0000" stroke="#c0392b" stroke-width="2"/>
+    </svg>
+  </div>
+  <p class="loader-text">Loading&hellip;</p>
+</div>
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- ========== NAVIGATION BAR ========== -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <svg class="nav-heart-icon" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hg4" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#e74c3c"/><stop offset="100%" stop-color="#8b0000"/>
+        </radialGradient>
+      </defs>
+      <path d="M50 85 C50 85 5 55 5 28 C5 14 16 5 28 5 C36 5 44 9 50 16 C56 9 64 5 72 5 C84 5 95 14 95 28 C95 55 50 85 50 85Z"
+        fill="url(#hg4)" stroke="#c0392b" stroke-width="1.5"/>
+      <line x1="50" y1="16" x2="50" y2="5" stroke="#e74c3c" stroke-width="2" opacity="0.6"/>
+      <line x1="50" y1="5" x2="42" y2="2" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+      <line x1="50" y1="5" x2="58" y2="2" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+    </svg>
+    <div class="nav-title">
+      Circulatory System
+      <span>Human Biology</span>
+    </div>
+  </a>
+  <div class="nav-toggle" role="button" tabindex="0" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="anatomy.html">Anatomy</a></li>
+    <li><a href="health.html">Exercise &amp; Health</a></li>
+    <li><a href="references.html" class="active">References</a></li>
+  </ul>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<header class="page-hero">
+  <p class="section-label" style="font-size:0.75rem;letter-spacing:4px;">Sources &amp; Citations</p>
+  <h1>Medical &amp; Scientific<br><em style="color:var(--crimson-glow);font-style:normal;">References</em></h1>
+  <p>All information on this site is drawn from peer-reviewed medical literature and trusted health organizations. Click any reference to visit the source.</p>
+</header>
+
+<!-- ========== REFERENCES ========== -->
+<section class="section" id="refs">
+  <div class="section-inner">
+
+    <!-- WHO -->
+    <div class="reveal">
+      <p class="section-label">Global Health</p>
+      <h2 class="section-title" style="font-size:1.6rem;">World Health Organization (WHO)</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <a class="ref-card reveal" href="https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">WHO</div>
+      <div class="ref-title">Cardiovascular Diseases (CVDs) — Fact Sheet</div>
+      <div class="ref-desc">Comprehensive overview of cardiovascular diseases worldwide, including prevalence, risk factors, prevention, and global mortality statistics. Updated 2021.</div>
+      <span class="ref-link">https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://www.who.int/news-room/fact-sheets/detail/hypertension" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">WHO</div>
+      <div class="ref-title">Hypertension — Fact Sheet</div>
+      <div class="ref-desc">Global statistics on hypertension, its causes, health consequences, and strategies for prevention and management. Includes the 1.28 billion adults figure.</div>
+      <span class="ref-link">https://www.who.int/news-room/fact-sheets/detail/hypertension</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">WHO</div>
+      <div class="ref-title">Physical Activity — Fact Sheet &amp; Guidelines</div>
+      <div class="ref-desc">WHO global recommendations on physical activity for health, including the 150&ndash;300 minutes per week of moderate aerobic activity for adults.</div>
+      <span class="ref-link">https://www.who.int/news-room/fact-sheets/detail/physical-activity</span>
+    </a>
+
+    <!-- American Heart Association -->
+    <div class="reveal" style="margin-top:2.5rem;">
+      <p class="section-label">Cardiology</p>
+      <h2 class="section-title" style="font-size:1.6rem;">American Heart Association (AHA)</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <a class="ref-card reveal" href="https://www.heart.org/en/health-topics/heart-attack/about-heart-attacks" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">American Heart Association</div>
+      <div class="ref-title">About Heart Attacks</div>
+      <div class="ref-desc">Detailed information on myocardial infarction: causes, symptoms, treatment, warning signs, and what to do in an emergency. Includes the FAST protocol.</div>
+      <span class="ref-link">https://www.heart.org/en/health-topics/heart-attack/about-heart-attacks</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://www.heart.org/en/health-topics/high-blood-pressure/the-facts-about-high-blood-pressure" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">American Heart Association</div>
+      <div class="ref-title">The Facts About High Blood Pressure</div>
+      <div class="ref-desc">Comprehensive resource on hypertension: definitions, measurement, risk factors, complications, and blood pressure management strategies.</div>
+      <span class="ref-link">https://www.heart.org/en/health-topics/high-blood-pressure</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://www.heart.org/en/healthy-living/fitness/fitness-basics/why-is-physical-activity-so-important-for-health-and-wellbeing" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">American Heart Association</div>
+      <div class="ref-title">Why Is Physical Activity Important for Health?</div>
+      <div class="ref-desc">Explains how regular physical activity strengthens the heart, lowers blood pressure, reduces LDL cholesterol, and decreases risk of cardiovascular disease.</div>
+      <span class="ref-link">https://www.heart.org/en/healthy-living/fitness</span>
+    </a>
+
+    <!-- Cleveland Clinic -->
+    <div class="reveal" style="margin-top:2.5rem;">
+      <p class="section-label">Clinical Medicine</p>
+      <h2 class="section-title" style="font-size:1.6rem;">Cleveland Clinic</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <a class="ref-card reveal" href="https://my.clevelandclinic.org/health/body/22965-heart" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">Cleveland Clinic</div>
+      <div class="ref-title">Heart: Anatomy, Function &amp; Conditions</div>
+      <div class="ref-desc">Detailed anatomical description of the human heart, covering chambers, valves, electrical system, function, and associated conditions. Includes diagrams and clinical details.</div>
+      <span class="ref-link">https://my.clevelandclinic.org/health/body/22965-heart</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://my.clevelandclinic.org/health/body/22891-blood-vessels" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">Cleveland Clinic</div>
+      <div class="ref-title">Blood Vessels: Structure, Function &amp; Types</div>
+      <div class="ref-desc">Covers the three main blood vessel types — arteries, veins, and capillaries — their structural differences, physiological roles, and common diseases.</div>
+      <span class="ref-link">https://my.clevelandclinic.org/health/body/22891-blood-vessels</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://my.clevelandclinic.org/health/diseases/16753-atherosclerosis" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">Cleveland Clinic</div>
+      <div class="ref-title">Atherosclerosis: What It Is, Causes, Symptoms &amp; Treatment</div>
+      <div class="ref-desc">Complete clinical overview of atherosclerosis including plaque formation, risk factors, symptom progression, diagnosis, and treatment options.</div>
+      <span class="ref-link">https://my.clevelandclinic.org/health/diseases/16753-atherosclerosis</span>
+    </a>
+
+    <!-- Mayo Clinic -->
+    <div class="reveal" style="margin-top:2.5rem;">
+      <p class="section-label">Medical Reference</p>
+      <h2 class="section-title" style="font-size:1.6rem;">Mayo Clinic</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <a class="ref-card reveal" href="https://www.mayoclinic.org/diseases-conditions/heart-disease/symptoms-causes/syc-20353118" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">Mayo Clinic</div>
+      <div class="ref-title">Heart Disease — Symptoms and Causes</div>
+      <div class="ref-desc">Comprehensive guide to various types of heart disease, their symptoms, risk factors, causes, and when to seek medical attention. Updated regularly by Mayo medical staff.</div>
+      <span class="ref-link">https://www.mayoclinic.org/diseases-conditions/heart-disease</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://www.mayoclinic.org/diseases-conditions/stroke/symptoms-causes/syc-20350113" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">Mayo Clinic</div>
+      <div class="ref-title">Stroke — Symptoms, Causes, Diagnosis &amp; Treatment</div>
+      <div class="ref-desc">Full clinical reference on ischemic and hemorrhagic stroke: warning signs (FAST), risk factors, emergency treatment, recovery, and prevention strategies.</div>
+      <span class="ref-link">https://www.mayoclinic.org/diseases-conditions/stroke</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://www.mayoclinic.org/healthy-lifestyle/fitness/in-depth/exercise-and-chronic-disease/art-20046049" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">Mayo Clinic</div>
+      <div class="ref-title">Exercise and Chronic Disease: Get the Facts</div>
+      <div class="ref-desc">How regular physical activity prevents and manages chronic diseases including heart disease, diabetes, hypertension, arthritis, and more. Evidence-based guidelines.</div>
+      <span class="ref-link">https://www.mayoclinic.org/healthy-lifestyle/fitness</span>
+    </a>
+
+    <!-- NIH / NCBI -->
+    <div class="reveal" style="margin-top:2.5rem;">
+      <p class="section-label">Biomedical Research</p>
+      <h2 class="section-title" style="font-size:1.6rem;">National Institutes of Health (NIH)</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <a class="ref-card reveal" href="https://www.nhlbi.nih.gov/health/heart" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">NIH — NHLBI</div>
+      <div class="ref-title">How the Heart Works</div>
+      <div class="ref-desc">NHLBI (National Heart, Lung, and Blood Institute) explains how the heart pumps blood, the role of the four chambers, valves, and the electrical system that controls heartbeat rhythm.</div>
+      <span class="ref-link">https://www.nhlbi.nih.gov/health/heart</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://www.ncbi.nlm.nih.gov/books/NBK279008/" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">NIH — NCBI / PubMed Health</div>
+      <div class="ref-title">The Cardiovascular System — Function &amp; Anatomy (NCBI Bookshelf)</div>
+      <div class="ref-desc">Peer-reviewed biomedical textbook chapter covering the anatomy and physiology of the cardiovascular system, including pulmonary and systemic circulation.</div>
+      <span class="ref-link">https://www.ncbi.nlm.nih.gov/books/NBK279008/</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://www.nhlbi.nih.gov/health/blood" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">NIH — NHLBI</div>
+      <div class="ref-title">Blood — Components, Types, and Disorders</div>
+      <div class="ref-desc">Overview of blood composition including red blood cells, white blood cells, platelets, and plasma; their production, function, and associated disorders.</div>
+      <span class="ref-link">https://www.nhlbi.nih.gov/health/blood</span>
+    </a>
+
+    <!-- Britannica -->
+    <div class="reveal" style="margin-top:2.5rem;">
+      <p class="section-label">Encyclopedia</p>
+      <h2 class="section-title" style="font-size:1.6rem;">Encyclopaedia Britannica</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <a class="ref-card reveal" href="https://www.britannica.com/science/cardiovascular-system" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">Encyclopaedia Britannica</div>
+      <div class="ref-title">Cardiovascular System — Human Biology</div>
+      <div class="ref-desc">Scholarly encyclopedia entry on the human cardiovascular system covering its evolutionary history, anatomy, physiology, and comparison with other vertebrates.</div>
+      <span class="ref-link">https://www.britannica.com/science/cardiovascular-system</span>
+    </a>
+
+    <a class="ref-card reveal" href="https://www.britannica.com/science/heart-anatomy" target="_blank" rel="noopener noreferrer">
+      <div class="ref-source">Encyclopaedia Britannica</div>
+      <div class="ref-title">Heart — Anatomy, Physiology &amp; Disorders</div>
+      <div class="ref-desc">In-depth encyclopedia article on the anatomy and physiology of the heart, covering chambers, valves, electrical conduction, cardiac cycle, and circulatory disorders.</div>
+      <span class="ref-link">https://www.britannica.com/science/heart-anatomy</span>
+    </a>
+
+    <!-- Disclaimer -->
+    <div class="glass-card reveal mt-2" style="text-align:center;">
+      <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;">
+        ⚠️ This website is an educational resource only and is not intended to provide medical advice, 
+        diagnosis, or treatment. All content is for informational purposes. Always consult a qualified 
+        physician or healthcare professional for any medical concerns.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>&#9829; Circulatory System</h3>
+      <p>An educational resource exploring the human cardiovascular system &mdash; its structure, function, and vital importance to human health.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="anatomy.html">Anatomy</a></li>
+        <li><a href="health.html">Exercise &amp; Health</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Sources</h4>
+      <ul>
+        <li><a href="https://www.who.int" target="_blank" rel="noopener">WHO</a></li>
+        <li><a href="https://www.heart.org" target="_blank" rel="noopener">American Heart Assoc.</a></li>
+        <li><a href="https://my.clevelandclinic.org" target="_blank" rel="noopener">Cleveland Clinic</a></li>
+        <li><a href="https://www.mayoclinic.org" target="_blank" rel="noopener">Mayo Clinic</a></li>
+        <li><a href="https://www.nih.gov" target="_blank" rel="noopener">NIH</a></li>
+        <li><a href="https://www.britannica.com" target="_blank" rel="noopener">Britannica</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Circulatory System &mdash; Educational Reference. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

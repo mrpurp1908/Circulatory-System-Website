@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise &amp; Health — The Circulatory System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========== LOADING SCREEN ========== -->
+<div id="loading-screen">
+  <div class="loader-heart">
+    <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 85 C50 85 5 55 5 28 C5 14 16 5 28 5 C36 5 44 9 50 16 C56 9 64 5 72 5 C84 5 95 14 95 28 C95 55 50 85 50 85Z"
+        fill="#8b0000" stroke="#c0392b" stroke-width="2"/>
+    </svg>
+  </div>
+  <p class="loader-text">Loading&hellip;</p>
+</div>
+
+<canvas id="particles-canvas"></canvas>
+
+<!-- ========== NAVIGATION BAR ========== -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <svg class="nav-heart-icon" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hg3" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#e74c3c"/><stop offset="100%" stop-color="#8b0000"/>
+        </radialGradient>
+      </defs>
+      <path d="M50 85 C50 85 5 55 5 28 C5 14 16 5 28 5 C36 5 44 9 50 16 C56 9 64 5 72 5 C84 5 95 14 95 28 C95 55 50 85 50 85Z"
+        fill="url(#hg3)" stroke="#c0392b" stroke-width="1.5"/>
+      <line x1="50" y1="16" x2="50" y2="5" stroke="#e74c3c" stroke-width="2" opacity="0.6"/>
+      <line x1="50" y1="5" x2="42" y2="2" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+      <line x1="50" y1="5" x2="58" y2="2" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+    </svg>
+    <div class="nav-title">
+      Circulatory System
+      <span>Human Biology</span>
+    </div>
+  </a>
+  <div class="nav-toggle" role="button" tabindex="0" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="anatomy.html">Anatomy</a></li>
+    <li><a href="health.html" class="active">Exercise &amp; Health</a></li>
+    <li><a href="references.html">References</a></li>
+  </ul>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<header class="page-hero">
+  <p class="section-label" style="font-size:0.75rem;letter-spacing:4px;">Cardiovascular Health</p>
+  <h1>Exercise &amp;<br><em style="color:var(--crimson-glow);font-style:normal;">Heart Health</em></h1>
+  <p>How physical activity transforms the circulatory system, habits that protect your heart, and the diseases to guard against.</p>
+</header>
+
+<!-- ========== SECTION 1: EFFECTS OF EXERCISE ========== -->
+<section class="section" id="exercise-effects">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Part I</p>
+      <h2 class="section-title">Effects of Exercise on the Heart</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">
+        During physical activity, the circulatory system undergoes remarkable immediate and long-term 
+        adaptations to meet the body's increased demands.
+      </p>
+    </div>
+
+    <!-- Immediate Effects stats -->
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <span class="stat-number" data-count="200" data-suffix=" bpm">0</span>
+        <span class="stat-label">Max heart rate during exercise</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="5" data-suffix="x">0</span>
+        <span class="stat-label">Increased cardiac output</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="30" data-suffix="%">0</span>
+        <span class="stat-label">Reduction in heart disease risk</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="12" data-suffix=" min">0</span>
+        <span class="stat-label">Min daily activity recommended</span>
+      </div>
+    </div>
+
+    <!-- Effect details -->
+    <div class="cards-grid cards-grid-3 reveal mt-2">
+      <div class="glass-card">
+        <span class="card-icon">💓</span>
+        <h3 class="card-title">Increased Heart Rate</h3>
+        <p class="card-body">
+          During exercise, the heart rate rises from a resting 60&ndash;100 bpm to as high as 
+          200 bpm. This is triggered by the nervous system releasing <em>epinephrine (adrenaline)</em>, 
+          signaling the sinoatrial (SA) node to fire faster. A well-trained athlete can have a 
+          resting heart rate as low as 40 bpm due to cardiac adaptations.
+        </p>
+      </div>
+      <div class="glass-card">
+        <span class="card-icon">🌀</span>
+        <h3 class="card-title">Faster Blood Circulation</h3>
+        <p class="card-body">
+          Cardiac output &mdash; the volume of blood pumped per minute &mdash; increases from 
+          ~5 L/min at rest to 20&ndash;25 L/min during intense exercise. Blood is redistributed 
+          away from non-essential organs (like the gut) toward active muscles, with blood flow 
+          to muscles increasing by up to 1,000%.
+        </p>
+      </div>
+      <div class="glass-card">
+        <span class="card-icon">🫁</span>
+        <h3 class="card-title">Oxygen Delivery</h3>
+        <p class="card-body">
+          Exercising muscles demand far more oxygen. The capillaries within muscles dilate 
+          to increase blood flow, and red blood cells release oxygen more readily at higher 
+          temperatures (the Bohr effect). Breathing rate also increases to 40&ndash;60 breaths/min 
+          to meet the heightened oxygen demand.
+        </p>
+      </div>
+      <div class="glass-card">
+        <span class="card-icon">💪</span>
+        <h3 class="card-title">Muscle Activity</h3>
+        <p class="card-body">
+          Contracting muscles produce increased CO₂ and lactic acid. This acidic environment 
+          signals blood vessels to dilate further, increasing local blood flow. Skeletal muscle 
+          contractions also act as a "muscle pump," helping propel venous blood back to the heart, 
+          reducing the workload on the heart itself.
+        </p>
+      </div>
+      <div class="glass-card">
+        <span class="card-icon">🔄</span>
+        <h3 class="card-title">Recovery After Exercise</h3>
+        <p class="card-body">
+          After exercise stops, the heart rate gradually returns to baseline over 5&ndash;60 minutes 
+          depending on fitness level. During this recovery, the body clears lactic acid, replenishes 
+          oxygen stores in muscles, and repairs microtears in muscle fibers. 
+          <em>Excess post-exercise oxygen consumption (EPOC)</em> keeps metabolism elevated.
+        </p>
+      </div>
+      <div class="glass-card">
+        <span class="card-icon">🏆</span>
+        <h3 class="card-title">Long-Term Adaptations</h3>
+        <p class="card-body">
+          Regular aerobic training causes the heart to grow larger (<em>cardiac hypertrophy</em>), 
+          pumping more blood per beat. Blood vessel walls become more elastic and flexible. 
+          The body develops more capillaries (angiogenesis), resting blood pressure decreases, 
+          and cholesterol profiles improve. These adaptations dramatically reduce cardiovascular risk.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 2: HEALTHY HABITS ========== -->
+<section class="section bg-section-alt" id="healthy-habits">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Part II</p>
+      <h2 class="section-title">Habits for a Healthy Heart</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">
+        Cardiovascular disease is largely preventable. Adopting these lifestyle habits 
+        significantly lowers risk and strengthens your circulatory system.
+      </p>
+    </div>
+
+    <div class="habits-grid reveal">
+      <div class="habit-item">
+        <span class="habit-icon">🏃</span>
+        <div class="habit-title">Regular Exercise</div>
+        <div class="habit-desc">150 min of moderate aerobic activity per week. Walking, cycling, swimming — keep the heart strong.</div>
+      </div>
+      <div class="habit-item">
+        <span class="habit-icon">🥦</span>
+        <div class="habit-title">Healthy Diet</div>
+        <div class="habit-desc">Mediterranean-style eating — fruits, vegetables, whole grains, lean proteins, and healthy fats reduce arterial plaque.</div>
+      </div>
+      <div class="habit-item">
+        <span class="habit-icon">💧</span>
+        <div class="habit-title">Stay Hydrated</div>
+        <div class="habit-desc">Drinking 8+ glasses of water daily keeps blood at the right viscosity and helps the heart pump efficiently.</div>
+      </div>
+      <div class="habit-item">
+        <span class="habit-icon">🚭</span>
+        <div class="habit-title">No Smoking</div>
+        <div class="habit-desc">Smoking damages blood vessel walls, promotes clot formation, and is a leading risk factor for heart attack and stroke.</div>
+      </div>
+      <div class="habit-item">
+        <span class="habit-icon">🧘</span>
+        <div class="habit-title">Manage Stress</div>
+        <div class="habit-desc">Chronic stress raises cortisol and blood pressure. Meditation, yoga, and breathing exercises protect the heart.</div>
+      </div>
+      <div class="habit-item">
+        <span class="habit-icon">😴</span>
+        <div class="habit-title">Quality Sleep</div>
+        <div class="habit-desc">7&ndash;9 hours of sleep allows the heart to rest and repair. Poor sleep is linked to hypertension and obesity.</div>
+      </div>
+      <div class="habit-item">
+        <span class="habit-icon">🍷</span>
+        <div class="habit-title">Limit Alcohol</div>
+        <div class="habit-desc">Excessive alcohol raises blood pressure and can cause irregular heart rhythms (arrhythmia). Moderation is key.</div>
+      </div>
+      <div class="habit-item">
+        <span class="habit-icon">⚖️</span>
+        <div class="habit-title">Healthy Weight</div>
+        <div class="habit-desc">Maintaining a healthy BMI reduces the heart's workload and lowers the risk of hypertension and diabetes.</div>
+      </div>
+    </div>
+
+    <!-- Exercise recommendations -->
+    <div class="glass-card reveal mt-2">
+      <h3 style="font-family:var(--font-display);color:var(--text-primary);margin-bottom:1.2rem;font-size:1.3rem;">
+        WHO Exercise Recommendations
+      </h3>
+      <div class="progress-container">
+        <div class="progress-label"><span>Moderate aerobic activity (adults)</span><span>150&ndash;300 min/week</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="75%"></div></div>
+      </div>
+      <div class="progress-container">
+        <div class="progress-label"><span>Vigorous aerobic activity</span><span>75&ndash;150 min/week</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="55%"></div></div>
+      </div>
+      <div class="progress-container">
+        <div class="progress-label"><span>Muscle-strengthening activities</span><span>2+ days/week</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="40%"></div></div>
+      </div>
+      <div class="progress-container">
+        <div class="progress-label"><span>Sedentary time (should be minimized)</span><span>limit &lt; 8 hrs/day</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="30%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SECTION 3: DISEASES ========== -->
+<section class="section" id="diseases">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Part III</p>
+      <h2 class="section-title">Common Circulatory Diseases</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">
+        Cardiovascular diseases are the world's number-one killer. Early understanding 
+        and prevention are the most powerful tools we have.
+      </p>
+    </div>
+
+    <div class="reveal">
+      <!-- Hypertension -->
+      <div class="disease-card">
+        <h3>🩺 Hypertension (High Blood Pressure)</h3>
+        <p>
+          Hypertension is a chronic condition where the force of blood against arterial walls is 
+          consistently too high (&gt;140/90 mmHg). It strains the heart, damages arteries, and 
+          significantly increases the risk of heart attack, stroke, and kidney failure. 
+          It affects over 1.28 billion adults worldwide (WHO). Often called the "silent killer" 
+          because it typically has no symptoms until complications arise.
+        </p>
+        <div class="prevention">
+          <strong>Prevention:</strong> Reduce sodium intake, exercise regularly, maintain healthy weight, 
+          limit alcohol, quit smoking, and take prescribed medications as directed.
+        </div>
+      </div>
+
+      <!-- Heart Attack -->
+      <div class="disease-card">
+        <h3>💔 Heart Attack (Myocardial Infarction)</h3>
+        <p>
+          A heart attack occurs when blood flow to a portion of the heart muscle is blocked, 
+          usually by a blood clot forming on a ruptured atherosclerotic plaque. Without blood 
+          supply, heart muscle cells begin to die within minutes. Symptoms include severe chest pain, 
+          shortness of breath, sweating, and pain radiating to the arm or jaw. It is a 
+          life-threatening medical emergency requiring immediate treatment.
+        </p>
+        <div class="prevention">
+          <strong>Prevention:</strong> Manage cholesterol and blood pressure, avoid smoking, 
+          exercise regularly, eat a heart-healthy diet, and know the warning signs to act quickly.
+        </div>
+      </div>
+
+      <!-- Stroke -->
+      <div class="disease-card">
+        <h3>🧠 Stroke (Cerebrovascular Accident)</h3>
+        <p>
+          A stroke occurs when blood supply to the brain is interrupted, either by a blockage 
+          (ischemic stroke, 87% of cases) or a ruptured vessel (hemorrhagic stroke). 
+          Brain cells die rapidly without oxygen &mdash; up to 1.9 million neurons per minute. 
+          Strokes are the second leading cause of death globally and a major cause of disability. 
+          The FAST acronym (Face drooping, Arm weakness, Speech difficulty, Time to call emergency) 
+          helps with rapid identification.
+        </p>
+        <div class="prevention">
+          <strong>Prevention:</strong> Control blood pressure and diabetes, exercise, maintain 
+          healthy cholesterol levels, avoid smoking, and manage atrial fibrillation if diagnosed.
+        </div>
+      </div>
+
+      <!-- Atherosclerosis -->
+      <div class="disease-card">
+        <h3>🔩 Atherosclerosis</h3>
+        <p>
+          Atherosclerosis is the buildup of plaques (composed of fat, cholesterol, calcium, and 
+          cellular debris) on artery walls, causing them to harden and narrow. This reduces blood 
+          flow and increases the risk of clot formation. It is the underlying cause of most heart 
+          attacks and strokes. The process begins early in life and progresses silently 
+          for decades before symptoms appear.
+        </p>
+        <div class="prevention">
+          <strong>Prevention:</strong> A diet low in saturated fats and trans fats, regular exercise, 
+          not smoking, managing blood sugar (diabetes control), and statins if prescribed by a doctor.
+        </div>
+      </div>
+
+      <!-- Arrhythmia -->
+      <div class="disease-card">
+        <h3>⚡ Cardiac Arrhythmia</h3>
+        <p>
+          Arrhythmia refers to an abnormal heart rhythm &mdash; the heart may beat too fast 
+          (tachycardia), too slow (bradycardia), or irregularly. The most common type is atrial 
+          fibrillation (AFib), affecting over 33 million people worldwide. Arrhythmias can range 
+          from harmless to life-threatening. They result from disruptions in the heart's electrical 
+          conduction system.
+        </p>
+        <div class="prevention">
+          <strong>Prevention:</strong> Avoid stimulants (caffeine, certain medications), manage stress, 
+          treat underlying conditions, and follow up with regular cardiac monitoring if at risk.
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="reveal text-center mt-2">
+      <p style="color:var(--text-secondary);margin-bottom:1.5rem;font-size:0.95rem;">
+        Always consult a qualified healthcare professional for personalized medical advice.
+      </p>
+      <a href="references.html" class="btn-outline">View Medical References &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>&#9829; Circulatory System</h3>
+      <p>An educational resource exploring the human cardiovascular system &mdash; its structure, function, and vital importance to human health.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="anatomy.html">Anatomy</a></li>
+        <li><a href="health.html">Exercise &amp; Health</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Health Topics</h4>
+      <ul>
+        <li><a href="#exercise-effects">Exercise Effects</a></li>
+        <li><a href="#healthy-habits">Healthy Habits</a></li>
+        <li><a href="#diseases">Circulatory Diseases</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Circulatory System &mdash; Educational Reference. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

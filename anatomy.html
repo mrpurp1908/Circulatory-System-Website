@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anatomy — The Circulatory System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========== LOADING SCREEN ========== -->
+<div id="loading-screen">
+  <div class="loader-heart">
+    <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 85 C50 85 5 55 5 28 C5 14 16 5 28 5 C36 5 44 9 50 16 C56 9 64 5 72 5 C84 5 95 14 95 28 C95 55 50 85 50 85Z"
+        fill="#8b0000" stroke="#c0392b" stroke-width="2"/>
+    </svg>
+  </div>
+  <p class="loader-text">Loading&hellip;</p>
+</div>
+
+<!-- ========== PARTICLE CANVAS ========== -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ========== NAVIGATION BAR ========== -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <svg class="nav-heart-icon" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hg2" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#e74c3c"/>
+          <stop offset="100%" stop-color="#8b0000"/>
+        </radialGradient>
+      </defs>
+      <path d="M50 85 C50 85 5 55 5 28 C5 14 16 5 28 5 C36 5 44 9 50 16 C56 9 64 5 72 5 C84 5 95 14 95 28 C95 55 50 85 50 85Z"
+        fill="url(#hg2)" stroke="#c0392b" stroke-width="1.5"/>
+      <line x1="50" y1="16" x2="50" y2="5" stroke="#e74c3c" stroke-width="2" opacity="0.6"/>
+      <line x1="50" y1="5" x2="42" y2="2" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+      <line x1="50" y1="5" x2="58" y2="2" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+    </svg>
+    <div class="nav-title">
+      Circulatory System
+      <span>Human Biology</span>
+    </div>
+  </a>
+  <div class="nav-toggle" role="button" tabindex="0" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="anatomy.html" class="active">Anatomy</a></li>
+    <li><a href="health.html">Exercise &amp; Health</a></li>
+    <li><a href="references.html">References</a></li>
+  </ul>
+</nav>
+
+<!-- ========== PAGE HERO ========== -->
+<header class="page-hero">
+  <p class="section-label" style="font-size:0.75rem;letter-spacing:4px;">Heart &amp; Blood Vessels</p>
+  <h1>Anatomy of the<br><em style="color:var(--crimson-glow);font-style:normal;">Circulatory System</em></h1>
+  <p>An in-depth exploration of the heart's chambers, valves, blood vessels, and the components of blood that sustain life.</p>
+</header>
+
+<!-- ========== HEART PARTS SECTION ========== -->
+<section class="section" id="heart-parts">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Part I</p>
+      <h2 class="section-title">Chambers &amp; Structures of the Heart</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">
+        The human heart is divided into four chambers and contains specialized valves that ensure 
+        blood flows in only one direction.
+      </p>
+    </div>
+
+    <!-- Right Atrium -->
+    <div class="anatomy-block">
+      <div class="anatomy-visual">🫀</div>
+      <div class="anatomy-info">
+        <span class="tag">Upper-Right Chamber</span>
+        <h3>Right Atrium</h3>
+        <p>
+          The right atrium is the upper-right chamber of the heart. It receives deoxygenated blood 
+          returning from the body through two large veins: the <strong style="color:var(--text-primary)">superior vena cava</strong> 
+          (from the upper body) and the <strong style="color:var(--text-primary)">inferior vena cava</strong> 
+          (from the lower body). It also receives blood from the coronary sinus, which drains 
+          the heart's own blood supply.
+        </p>
+        <p>
+          Once filled, the right atrium contracts and pumps blood through the 
+          <em>tricuspid valve</em> into the right ventricle below it.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Ventricle -->
+    <div class="anatomy-block reverse">
+      <div class="anatomy-visual">💓</div>
+      <div class="anatomy-info">
+        <span class="tag">Lower-Right Chamber</span>
+        <h3>Right Ventricle</h3>
+        <p>
+          The right ventricle is the lower-right chamber. It receives deoxygenated blood from the 
+          right atrium and pumps it out through the <strong style="color:var(--text-primary)">pulmonary valve</strong> 
+          into the pulmonary artery, which carries it to the lungs for oxygenation.
+        </p>
+        <p>
+          The right ventricle has a thinner muscular wall than the left ventricle, since it only 
+          needs to pump blood the short distance to the lungs rather than throughout the entire body.
+        </p>
+      </div>
+    </div>
+
+    <!-- Left Atrium -->
+    <div class="anatomy-block">
+      <div class="anatomy-visual">🩺</div>
+      <div class="anatomy-info">
+        <span class="tag">Upper-Left Chamber</span>
+        <h3>Left Atrium</h3>
+        <p>
+          The left atrium receives freshly oxygenated blood returning from the lungs via the 
+          four <strong style="color:var(--text-primary)">pulmonary veins</strong> &mdash; the only 
+          veins in the body that carry oxygen-rich blood. It acts as a reservoir for oxygenated 
+          blood before passing it to the left ventricle.
+        </p>
+        <p>
+          The left atrium contracts to push blood through the <em>mitral (bicuspid) valve</em> 
+          into the powerful left ventricle. It is separated from the right atrium by the 
+          <em>interatrial septum</em>.
+        </p>
+      </div>
+    </div>
+
+    <!-- Left Ventricle -->
+    <div class="anatomy-block reverse">
+      <div class="anatomy-visual">❤️‍🔥</div>
+      <div class="anatomy-info">
+        <span class="tag">Lower-Left Chamber — Main Pump</span>
+        <h3>Left Ventricle</h3>
+        <p>
+          The left ventricle is the most muscular chamber of the heart and functions as the 
+          primary pump for systemic circulation. Its walls are approximately three times thicker 
+          than those of the right ventricle, enabling it to generate the high pressure needed to 
+          push blood throughout the entire body.
+        </p>
+        <p>
+          With each contraction (systole), the left ventricle forces blood through the 
+          <strong style="color:var(--text-primary)">aortic valve</strong> into the aorta, 
+          propelling it to all organs and tissues.
+        </p>
+      </div>
+    </div>
+
+    <!-- Aorta -->
+    <div class="anatomy-block">
+      <div class="anatomy-visual">🔴</div>
+      <div class="anatomy-info">
+        <span class="tag">Great Artery</span>
+        <h3>The Aorta</h3>
+        <p>
+          The aorta is the largest and most important artery in the human body, roughly 
+          30 cm (12 inches) long and 2.5 cm (1 inch) in diameter. It originates at the 
+          left ventricle, arches upward and backward, then descends through the chest and 
+          abdomen to supply the entire systemic circulation.
+        </p>
+        <p>
+          It branches into major arteries including the coronary arteries (supplying the heart), 
+          carotid arteries (supplying the brain), and many others. It withstands enormous 
+          pressure with each heartbeat.
+        </p>
+      </div>
+    </div>
+
+    <!-- Valves -->
+    <div class="anatomy-block reverse">
+      <div class="anatomy-visual">🚪</div>
+      <div class="anatomy-info">
+        <span class="tag">One-Way Gates</span>
+        <h3>Heart Valves</h3>
+        <p>
+          The heart contains four valves that function like one-way doors, ensuring blood 
+          flows in only one direction and preventing backflow:
+        </p>
+        <p>
+          &bull; <strong style="color:var(--crimson-light)">Tricuspid Valve</strong> &mdash; between right atrium and right ventricle<br>
+          &bull; <strong style="color:var(--crimson-light)">Pulmonary Valve</strong> &mdash; between right ventricle and pulmonary artery<br>
+          &bull; <strong style="color:var(--crimson-light)">Mitral Valve</strong> &mdash; between left atrium and left ventricle<br>
+          &bull; <strong style="color:var(--crimson-light)">Aortic Valve</strong> &mdash; between left ventricle and aorta
+        </p>
+        <p>The familiar "lub-dub" heartbeat sound is the closing of these valves.</p>
+      </div>
+    </div>
+
+    <!-- Septum -->
+    <div class="anatomy-block">
+      <div class="anatomy-visual">🧱</div>
+      <div class="anatomy-info">
+        <span class="tag">Internal Divider</span>
+        <h3>The Septum</h3>
+        <p>
+          The septum is the thick muscular wall that divides the heart into left and right 
+          sides, keeping oxygenated and deoxygenated blood completely separate. There are 
+          two parts: the <strong style="color:var(--text-primary)">interatrial septum</strong> 
+          (between the atria) and the <strong style="color:var(--text-primary)">interventricular septum</strong> 
+          (between the ventricles).
+        </p>
+        <p>
+          A hole in the septum is known as a septal defect &mdash; one of the most common 
+          congenital heart conditions in newborns, allowing blood to mix between chambers.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BLOOD VESSELS SECTION ========== -->
+<section class="section bg-section-alt" id="blood-vessels">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Part II</p>
+      <h2 class="section-title">The Blood Vessels</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">
+        A vast network of tubes totaling over 60,000 miles in length, categorized into 
+        three main types based on structure and function.
+      </p>
+    </div>
+
+    <div class="cards-grid cards-grid-3 reveal">
+      <div class="glass-card">
+        <span class="card-icon">🔴</span>
+        <h3 class="card-title">Arteries</h3>
+        <p class="card-body">
+          Arteries carry oxygenated blood <strong style="color:var(--text-primary)">away from the heart</strong> 
+          under high pressure. They have thick, muscular, elastic walls that expand and recoil with 
+          each heartbeat. The pulmonary arteries are the exception, carrying deoxygenated blood 
+          to the lungs. Arteries branch into smaller <em>arterioles</em> before reaching capillaries.
+        </p>
+      </div>
+      <div class="glass-card">
+        <span class="card-icon">🔵</span>
+        <h3 class="card-title">Veins</h3>
+        <p class="card-body">
+          Veins carry deoxygenated blood <strong style="color:var(--text-primary)">back to the heart</strong> 
+          under lower pressure. They have thinner walls and contain one-way valves that prevent 
+          backflow. Skeletal muscle contractions and breathing help push blood through veins 
+          against gravity. They begin as tiny <em>venules</em> that merge into larger veins.
+        </p>
+      </div>
+      <div class="glass-card">
+        <span class="card-icon">🔬</span>
+        <h3 class="card-title">Capillaries</h3>
+        <p class="card-body">
+          Capillaries are microscopic vessels just one cell thick (5&ndash;10 micrometers), 
+          forming dense networks called <em>capillary beds</em>. They are the only vessels 
+          where actual gas, nutrient, and waste exchange occurs between blood and body tissues. 
+          Their thin walls allow oxygen and glucose to diffuse out while CO₂ and waste diffuse in.
+        </p>
+      </div>
+    </div>
+
+    <!-- Comparison Table -->
+    <div class="reveal mt-2">
+      <h3 style="font-family:var(--font-display);color:var(--text-primary);margin-bottom:1rem;font-size:1.3rem;">
+        Structural Comparison
+      </h3>
+      <div style="overflow-x:auto;">
+        <table class="vessel-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Arteries</th>
+              <th>Veins</th>
+              <th>Capillaries</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Wall Thickness</td>
+              <td>Thick &amp; muscular</td>
+              <td>Thin &amp; flexible</td>
+              <td>One cell thick</td>
+            </tr>
+            <tr>
+              <td>Blood Pressure</td>
+              <td>High</td>
+              <td>Low</td>
+              <td>Very low</td>
+            </tr>
+            <tr>
+              <td>Valves</td>
+              <td>No (except heart exit)</td>
+              <td>Yes</td>
+              <td>No</td>
+            </tr>
+            <tr>
+              <td>Blood Direction</td>
+              <td>Away from heart</td>
+              <td>Toward heart</td>
+              <td>Between arteries &amp; veins</td>
+            </tr>
+            <tr>
+              <td>Oxygen Content</td>
+              <td>High (usually)</td>
+              <td>Low (usually)</td>
+              <td>Exchanging</td>
+            </tr>
+            <tr>
+              <td>Diameter</td>
+              <td>4&ndash;25 mm</td>
+              <td>5&ndash;30 mm</td>
+              <td>5&ndash;10 &mu;m</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== BLOOD COMPONENTS SECTION ========== -->
+<section class="section" id="blood">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Part III</p>
+      <h2 class="section-title">Components of Blood</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">
+        Blood is a specialized connective tissue composed of four distinct components, 
+        each serving essential physiological roles.
+      </p>
+    </div>
+
+    <!-- Blood composition visual -->
+    <div class="glass-card reveal" style="margin-bottom:2rem;">
+      <h3 style="font-family:var(--font-display);color:var(--text-primary);margin-bottom:1.2rem;">Blood Composition by Volume</h3>
+      <div class="progress-container">
+        <div class="progress-label"><span>Plasma</span><span>55%</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="55%"></div></div>
+      </div>
+      <div class="progress-container">
+        <div class="progress-label"><span>Red Blood Cells (Erythrocytes)</span><span>43%</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="43%"></div></div>
+      </div>
+      <div class="progress-container">
+        <div class="progress-label"><span>White Blood Cells (Leukocytes)</span><span>1%</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="1%"></div></div>
+      </div>
+      <div class="progress-container">
+        <div class="progress-label"><span>Platelets (Thrombocytes)</span><span>1%</span></div>
+        <div class="progress-bar"><div class="progress-fill" data-width="1%"></div></div>
+      </div>
+    </div>
+
+    <div class="cards-grid reveal">
+      <!-- Red Blood Cells -->
+      <div class="glass-card">
+        <span class="card-icon">🔴</span>
+        <h3 class="card-title">Red Blood Cells</h3>
+        <p class="card-body">
+          Erythrocytes are disc-shaped cells packed with <em>hemoglobin</em>, an iron-containing 
+          protein that binds oxygen. They lack a nucleus, maximizing space for hemoglobin. 
+          The average adult has about 25 trillion RBCs. Each lives for about 120 days 
+          before being recycled in the spleen.
+        </p>
+      </div>
+
+      <!-- White Blood Cells -->
+      <div class="glass-card">
+        <span class="card-icon">🛡️</span>
+        <h3 class="card-title">White Blood Cells</h3>
+        <p class="card-body">
+          Leukocytes form the cellular arm of the immune system. They identify and destroy 
+          pathogens, foreign particles, and cancerous cells. Types include neutrophils, 
+          lymphocytes (T cells and B cells), monocytes, eosinophils, and basophils. 
+          Though far fewer in number than RBCs, they are vital defenders.
+        </p>
+      </div>
+
+      <!-- Platelets -->
+      <div class="glass-card">
+        <span class="card-icon">🩹</span>
+        <h3 class="card-title">Platelets</h3>
+        <p class="card-body">
+          Thrombocytes are tiny cell fragments produced from large cells called 
+          <em>megakaryocytes</em> in bone marrow. When a blood vessel is injured, platelets 
+          rush to the site and clump together to form a plug, initiating the clotting 
+          (coagulation) cascade that stops bleeding. Normal count: 150,000&ndash;400,000 per &mu;L.
+        </p>
+      </div>
+
+      <!-- Plasma -->
+      <div class="glass-card">
+        <span class="card-icon">💛</span>
+        <h3 class="card-title">Plasma</h3>
+        <p class="card-body">
+          Plasma is the pale yellow liquid that makes up about 55% of blood volume, consisting 
+          of ~90% water. It carries dissolved nutrients (glucose, amino acids, lipids), 
+          hormones, clotting factors, antibodies, and waste products (urea, CO₂). 
+          It also maintains blood pressure and body temperature balance.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>&#9829; Circulatory System</h3>
+      <p>An educational resource exploring the human cardiovascular system &mdash; its structure, function, and vital importance to human health.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="anatomy.html">Anatomy</a></li>
+        <li><a href="health.html">Exercise &amp; Health</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Anatomy Sections</h4>
+      <ul>
+        <li><a href="#heart-parts">Heart Chambers</a></li>
+        <li><a href="#blood-vessels">Blood Vessels</a></li>
+        <li><a href="#blood">Blood Components</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Circulatory System &mdash; Educational Reference. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-8 8h5v8h6v-8h5z"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>

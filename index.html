@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Circulatory System — Human Biology</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========== LOADING SCREEN ========== -->
+<div id="loading-screen">
+  <div class="loader-heart">
+    <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 85 C50 85 5 55 5 28 C5 14 16 5 28 5 C36 5 44 9 50 16 C56 9 64 5 72 5 C84 5 95 14 95 28 C95 55 50 85 50 85Z"
+        fill="#8b0000" stroke="#c0392b" stroke-width="2"/>
+    </svg>
+  </div>
+  <p class="loader-text">Loading&hellip;</p>
+</div>
+
+<!-- ========== PARTICLE CANVAS ========== -->
+<canvas id="particles-canvas"></canvas>
+
+<!-- ========== NAVIGATION BAR ========== -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <!-- Heart Logo SVG -->
+    <svg class="nav-heart-icon" viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="hg" cx="50%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="#e74c3c"/>
+          <stop offset="100%" stop-color="#8b0000"/>
+        </radialGradient>
+      </defs>
+      <path d="M50 85 C50 85 5 55 5 28 C5 14 16 5 28 5 C36 5 44 9 50 16 C56 9 64 5 72 5 C84 5 95 14 95 28 C95 55 50 85 50 85Z"
+        fill="url(#hg)" stroke="#c0392b" stroke-width="1.5"/>
+      <!-- Aorta detail lines -->
+      <line x1="50" y1="16" x2="50" y2="5" stroke="#e74c3c" stroke-width="2" opacity="0.6"/>
+      <line x1="50" y1="5" x2="42" y2="2" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+      <line x1="50" y1="5" x2="58" y2="2" stroke="#e74c3c" stroke-width="1.5" opacity="0.5"/>
+    </svg>
+    <div class="nav-title">
+      Circulatory System
+      <span>Human Biology</span>
+    </div>
+  </a>
+
+  <!-- Hamburger Toggle -->
+  <div class="nav-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="anatomy.html">Anatomy</a></li>
+    <li><a href="health.html">Exercise &amp; Health</a></li>
+    <li><a href="references.html">References</a></li>
+  </ul>
+</nav>
+
+<!-- ========== HERO SECTION ========== -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+
+  <!-- Large background heart graphic -->
+  <div class="hero-heart-graphic">
+    <svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg">
+      <path d="M50 85 C50 85 5 55 5 28 C5 14 16 5 28 5 C36 5 44 9 50 16 C56 9 64 5 72 5 C84 5 95 14 95 28 C95 55 50 85 50 85Z"
+        fill="#8b0000"/>
+    </svg>
+  </div>
+
+  <!-- Animated ECG wave -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1400 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Repeating ECG pattern -->
+      <polyline points="
+        0,50 80,50 100,50 115,10 130,80 145,50 160,50
+        240,50 260,50 275,10 290,80 305,50 320,50
+        400,50 420,50 435,10 450,80 465,50 480,50
+        560,50 580,50 595,10 610,80 625,50 640,50
+        720,50 740,50 755,10 770,80 785,50 800,50
+        880,50 900,50 915,10 930,80 945,50 960,50
+        1040,50 1060,50 1075,10 1090,80 1105,50 1120,50
+        1200,50 1220,50 1235,10 1250,80 1265,50 1280,50
+        1400,50"
+        fill="none" stroke="#e74c3c" stroke-width="3"/>
+    </svg>
+  </div>
+
+  <!-- Hero Content -->
+  <div class="hero-content">
+    <p class="hero-eyebrow">&#9829; Human Biology &mdash; Life Sciences</p>
+    <h1>The <em>Circulatory</em><br>System</h1>
+    <p class="hero-description">
+      The body's intricate highway of life &mdash; a continuous, closed network of the heart, 
+      blood vessels, and blood that sustains every cell, organ, and tissue in the human body.
+    </p>
+    <div class="hero-actions">
+      <a href="#overview" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="white" style="transform:rotate(90deg)"><path d="M8 5v14l11-7z"/></svg>
+        Explore Now
+      </a>
+      <a href="anatomy.html" class="btn-outline">View Anatomy &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Heartbeat ECG line at bottom of hero -->
+  <div class="heartbeat-bar">
+    <svg viewBox="0 0 1200 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polyline class="ecg-line" points="
+        0,40 100,40 130,40 150,5 165,70 180,40 220,40
+        320,40 350,40 370,5 385,70 400,40 440,40
+        540,40 570,40 590,5 605,70 620,40 660,40
+        760,40 790,40 810,5 825,70 840,40 880,40
+        980,40 1010,40 1030,5 1045,70 1060,40 1100,40
+        1200,40"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ========== OVERVIEW SECTION ========== -->
+<section class="section" id="overview">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Overview</p>
+      <h2 class="section-title">What is the Circulatory System?</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">
+        A vital organ system that acts as the body's delivery network &mdash; transporting oxygen, 
+        nutrients, hormones, and waste products to and from every cell in the body.
+      </p>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="stats-grid reveal">
+      <div class="stat-card">
+        <span class="stat-number" data-count="100000" data-suffix="">0</span>
+        <span class="stat-label">Heartbeats per day</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="60000" data-suffix=" mi">0</span>
+        <span class="stat-label">Blood vessels</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="5.6" data-suffix="L">0</span>
+        <span class="stat-label">Blood in adult body</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-count="25" data-suffix="B+">0</span>
+        <span class="stat-label">Red blood cells</span>
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="glass-card reveal mt-2">
+      <p style="font-size:1rem; color:var(--text-secondary); line-height:1.9; margin-bottom:1rem;">
+        The <mark class="red">circulatory system</mark>, also known as the cardiovascular system, is composed of the 
+        heart, blood, and an extensive network of blood vessels including arteries, veins, and capillaries. 
+        It operates in two main circuits: the <strong style="color:var(--text-primary)">pulmonary circuit</strong> 
+        (moving blood between the heart and lungs) and the <strong style="color:var(--text-primary)">systemic circuit</strong> 
+        (moving blood between the heart and the rest of the body).
+      </p>
+      <p style="font-size:1rem; color:var(--text-secondary); line-height:1.9;">
+        This system is fundamental to life itself &mdash; it delivers oxygen and nutrients to tissues, 
+        removes carbon dioxide and metabolic wastes, regulates body temperature and pH, transports hormones, 
+        and protects the body against disease through immune cells. Without it, no organ could survive 
+        more than a few minutes.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== COMPONENT CARDS SECTION ========== -->
+<section class="section bg-section-alt" id="components">
+  <div class="section-inner">
+    <div class="reveal">
+      <p class="section-label">Key Components</p>
+      <h2 class="section-title">Building Blocks of Life</h2>
+      <div class="section-divider"></div>
+      <p class="section-subtitle">
+        Five fundamental elements form the circulatory system, each with a distinct and critical role.
+      </p>
+    </div>
+
+    <div class="cards-grid">
+      <!-- Heart -->
+      <div class="glass-card reveal reveal-delay-1">
+        <span class="card-icon">🫀</span>
+        <h3 class="card-title">The Heart</h3>
+        <p class="card-body">
+          A powerful muscular pump about the size of a fist, divided into four chambers. 
+          It beats 60&ndash;100 times per minute, pumping blood throughout the entire body 
+          without rest from birth until death.
+        </p>
+      </div>
+
+      <!-- Blood -->
+      <div class="glass-card reveal reveal-delay-2">
+        <span class="card-icon">🩸</span>
+        <h3 class="card-title">Blood</h3>
+        <p class="card-body">
+          A specialized connective tissue consisting of red blood cells, white blood cells, 
+          platelets, and plasma. It serves as the medium for transporting gases, nutrients, 
+          hormones, and immune cells throughout the body.
+        </p>
+      </div>
+
+      <!-- Arteries -->
+      <div class="glass-card reveal reveal-delay-3">
+        <span class="card-icon">🔴</span>
+        <h3 class="card-title">Arteries</h3>
+        <p class="card-body">
+          Thick-walled muscular vessels that carry oxygenated blood away from the heart 
+          under high pressure. The aorta, the largest artery, stretches about 12 inches 
+          in length and 1 inch in diameter.
+        </p>
+      </div>
+
+      <!-- Veins -->
+      <div class="glass-card reveal reveal-delay-1">
+        <span class="card-icon">🫀</span>
+        <h3 class="card-title">Veins</h3>
+        <p class="card-body">
+          Thin-walled vessels equipped with one-way valves that return deoxygenated blood 
+          back to the heart. They hold approximately 70% of the total blood volume at any 
+          given moment, acting as blood reservoirs.
+        </p>
+      </div>
+
+      <!-- Capillaries -->
+      <div class="glass-card reveal reveal-delay-2">
+        <span class="card-icon">🔬</span>
+        <h3 class="card-title">Capillaries</h3>
+        <p class="card-body">
+          Microscopic vessels just one cell thick, forming intricate networks between 
+          arteries and veins. They are the true site of gas and nutrient exchange between 
+          blood and surrounding tissues &mdash; the smallest functional unit of circulation.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CIRCULATION PROCESS SECTION ========== -->
+<section class="section" id="process">
+  <div class="section-inner text-center">
+    <div class="reveal">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-title">The Journey of Blood</h2>
+      <div class="section-divider" style="margin:1rem auto 2rem;"></div>
+    </div>
+
+    <!-- Process Steps -->
+    <div class="cards-grid cards-grid-3 reveal">
+      <div class="glass-card" style="text-align:left;">
+        <div style="font-size:1.6rem;font-family:var(--font-display);color:var(--crimson-glow);margin-bottom:0.5rem;">01</div>
+        <h3 class="card-title">Deoxygenated Blood Returns</h3>
+        <p class="card-body">
+          Blood depleted of oxygen returns from the body through the superior and inferior 
+          vena cava into the right atrium of the heart.
+        </p>
+      </div>
+      <div class="glass-card" style="text-align:left;">
+        <div style="font-size:1.6rem;font-family:var(--font-display);color:var(--crimson-glow);margin-bottom:0.5rem;">02</div>
+        <h3 class="card-title">Pulmonary Circulation</h3>
+        <p class="card-body">
+          The right ventricle pumps blood to the lungs via the pulmonary artery, where 
+          carbon dioxide is exchanged for fresh oxygen in a process called gas exchange.
+        </p>
+      </div>
+      <div class="glass-card" style="text-align:left;">
+        <div style="font-size:1.6rem;font-family:var(--font-display);color:var(--crimson-glow);margin-bottom:0.5rem;">03</div>
+        <h3 class="card-title">Oxygenated Blood Pumped Out</h3>
+        <p class="card-body">
+          Oxygen-rich blood returns to the left atrium, moves to the left ventricle, and 
+          is then pumped out through the aorta to the entire body. The cycle repeats.
+        </p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="reveal mt-2">
+      <a href="anatomy.html" class="btn-primary">Explore Full Anatomy &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ========== IMPORTANCE SECTION ========== -->
+<section class="section bg-section-alt">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;" class="reveal">
+      <div>
+        <p class="section-label">Why It Matters</p>
+        <h2 class="section-title">Life Depends on<br>Every Beat</h2>
+        <div class="section-divider"></div>
+        <p style="color:var(--text-secondary);line-height:1.85;margin-bottom:1.2rem;font-size:0.97rem;">
+          The circulatory system is so essential that its failure for even a few minutes can cause 
+          permanent brain damage or death. Heart disease remains the world's leading cause of 
+          mortality &mdash; responsible for 17.9 million deaths annually according to the WHO.
+        </p>
+        <p style="color:var(--text-secondary);line-height:1.85;margin-bottom:2rem;font-size:0.97rem;">
+          Understanding how this system works empowers us to make choices that protect and 
+          strengthen it through diet, exercise, and lifestyle &mdash; adding years to life 
+          and life to years.
+        </p>
+        <a href="health.html" class="btn-outline">Exercise &amp; Health Tips &rarr;</a>
+      </div>
+      <div>
+        <!-- Key facts list -->
+        <div class="glass-card" style="margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="font-size:1.8rem;">❤️</span>
+            <div>
+              <div style="font-size:0.85rem;color:var(--text-primary);font-weight:600;">Oxygen Delivery</div>
+              <div style="font-size:0.82rem;color:var(--text-muted);">Supplies every cell with O₂ and nutrients</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card" style="margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="font-size:1.8rem;">🛡️</span>
+            <div>
+              <div style="font-size:0.85rem;color:var(--text-primary);font-weight:600;">Immune Defense</div>
+              <div style="font-size:0.82rem;color:var(--text-muted);">Transports white blood cells to fight infection</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card" style="margin-bottom:1rem;">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="font-size:1.8rem;">🌡️</span>
+            <div>
+              <div style="font-size:0.85rem;color:var(--text-primary);font-weight:600;">Temperature Regulation</div>
+              <div style="font-size:0.82rem;color:var(--text-muted);">Maintains stable core body temperature</div>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="font-size:1.8rem;">🧪</span>
+            <div>
+              <div style="font-size:0.85rem;color:var(--text-primary);font-weight:600;">Waste Removal</div>
+              <div style="font-size:0.82rem;color:var(--text-muted);">Carries metabolic waste to kidneys and lungs</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>&#9829; Circulatory System</h3>
+      <p>
+        An educational resource exploring the human cardiovascular system &mdash; its structure, 
+        function, and vital importance to human health and life.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="anatomy.html">Anatomy</a></li>
+        <li><a href="health.html">Exercise &amp; Health</a></li>
+        <li><a href="references.html">References</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="anatomy.html#heart-parts">Heart Anatomy</a></li>
+        <li><a href="anatomy.html#blood-vessels">Blood Vessels</a></li>
+        <li><a href="anatomy.html#blood">Blood Components</a></li>
+        <li><a href="health.html#diseases">Circulatory Diseases</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Circulatory System &mdash; Educational Reference. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- ========== SCROLL TO TOP ========== -->
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+  </svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
